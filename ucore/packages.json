@@ -3,6 +3,7 @@
         "include": {
             "all": [],
             "ucore-minimal": [
+                "bootc",
                 "cockpit-networkmanager",
                 "cockpit-podman",
                 "cockpit-selinux",
@@ -18,17 +19,28 @@
                 "wireguard-tools"
             ],
             "ucore": [
+                "NetworkManager-wifi",
+                "atheros-firmware",
+                "brcmfmac-firmware",
+                "cockpit-pcp",
                 "cockpit-storaged",
                 "distrobox",
                 "duperemove",
+                "hdparm",
                 "iwlegacy-firmware",
                 "iwlwifi-dvm-firmware",
                 "iwlwifi-mvm-firmware",
+                "mt7xxx-firmware",
                 "nfs-utils",
+                "nxpwireless-firmware",
                 "pciutils",
+                "pcp-zeroconf",
+                "rclone",
+                "realtek-firmware",
                 "samba",
                 "samba-usershares",
                 "snapraid",
+                "tiwilink-firmware",
                 "usbutils",
                 "xdg-dbus-proxy",
                 "xdg-user-dirs"

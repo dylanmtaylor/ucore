@@ -49,10 +49,12 @@ Suitable for running containerized workloads on either bare metal or virtual mac
 
 - Starts with a [Fedora CoreOS image](https://quay.io/repository/fedora/fedora-coreos?tab=tags)
 - Adds the following:
+  - [bootc](https://github.com/containers/bootc) (new way to update container native systems)
   - [cockpit](https://cockpit-project.org) (podman container and system management)
   - [firewalld](https://firewalld.org/)
   - guest VM agents (`qemu-guest-agent` and `open-vm-tools`))
-  - [docker-compose](https://github.com/docker/compose) and [podman-compose](https://github.com/containers/podman-compose) *docker(moby-engine) and podman are pre-installed in CoreOS*
+  - [docker-buildx](https://github.com/docker/buildx) and [docker-compose](https://github.com/docker/compose) (versions matched to moby release) *docker(moby-engine) is pre-installed in CoreOS*
+  - [podman-compose](https://github.com/containers/podman-compose) *podman is pre-installed in CoreOS*
   - [tailscale](https://tailscale.com) and [wireguard-tools](https://www.wireguard.com)
   - [tmux](https://github.com/tmux/tmux/wiki/Getting-Started)
   - udev rules enabling full functionality on some [Realtek 2.5Gbit USB Ethernet](https://github.com/wget/realtek-r8152-linux/) devices
@@ -80,9 +82,11 @@ This image builds on `ucore-minimal` but adds drivers, storage tools and utiliti
   - [cockpit-storaged](https://cockpit-project.org) (udisks2 based storage management)
   - [distrobox](https://github.com/89luca89/distrobox) - a [toolbox](https://containertoolbx.org/) alternative
   - [duperemove](https://github.com/markfasheh/duperemove)
-  - intel wifi firmware - CoreOS omits this despite including atheros wifi firmware... hardware enablement FTW
+  - all wireless (wifi) card firmwares (CoreOS does not include them) - hardware enablement FTW
   - [mergerfs](https://github.com/trapexit/mergerfs)
   - nfs-utils - nfs utils including daemon for kernel NFS server
+  - [pcp](https://pcp.io) Performance Co-pilot monitoring
+  - [rclone](https://www.rclone.org/) - file synchronization and mounting of cloud storage
   - [samba](https://www.samba.org/) and samba-usershares to provide SMB sevices
   - [snapraid](https://www.snapraid.it/)
   - usbutils(and pciutils) - technically pciutils is pulled in by open-vm-tools in ucore-minimal
@@ -415,3 +419,7 @@ These images are signed with sigstore's [cosign](https://docs.sigstore.dev/cosig
 ```bash
 cosign verify --key cosign.pub ghcr.io/ublue-os/ucore
 ```
+
+## Metrics
+
+![Alt](https://repobeats.axiom.co/api/embed/07d1ed133f5ed1a1048ea6a76bfe3a23227eedd5.svg "Repobeats analytics image")
