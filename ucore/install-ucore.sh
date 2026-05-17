@@ -3,7 +3,7 @@
 set -ouex pipefail
 
 # install packages
-dnf -y swap nfs-utils-coreos nfs-utils
+dnf -y swap nfs-utils-coreos nfs-utils nfs-client-utils
 dnf -y install \
     NetworkManager-wifi \
     atheros-firmware \
