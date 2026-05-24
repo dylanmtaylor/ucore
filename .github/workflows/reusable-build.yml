@@ -244,7 +244,7 @@ jobs:
           pushd ucore
           UCORE_STREAM=${{ inputs.ucore_stream }} \
           FEDORA_VERSION=${{ env.FEDORA_VERSION }} \
-          IMAGE_REGISTRY=${{ env.IMAGE_REGISTRY }} \
+          IMAGE_REGISTRY=ghcr.io/ublue-os \
           KERNEL_FLAVOR=${{ env.KERNEL_FLAVOR }} \
           KERNEL_VERSION=${{ env.KERNEL_VERSION }} \
           NVIDIA_TAG=${{ matrix.nvidia_tag }} \
